@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Ignacio Blady - Portfolio Profesional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7ea27c;
+            --secondary-dark: #0d5209;
+            --secondary-light: #aecbad;
+            --beige: #d9c9b7;
+            --white: #ffffff;
+            --text-dark: #2d3748;
+            --text-light: #4a5568;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Dots Pattern */
+        .dots-pattern {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background-image: radial-gradient(circle, currentColor 2.5px, transparent 2.5px);
+            background-size: 14px 14px;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .dots-top-right {
+            top: 40px;
+            right: 40px;
+            color: var(--secondary-dark);
+        }
+
+        .dots-bottom-left {
+            bottom: 40px;
+            left: 40px;
+            color: var(--beige);
+        }
+
+        .dots-top-left {
+            top: 60px;
+            left: 60px;
+            color: var(--secondary-dark);
+        }
+
+        .dots-bottom-right {
+            bottom: 60px;
+            right: 60px;
+            color: var(--beige);
+        }
+
+        /* Line Decorations */
+        .line-decoration {
+            position: absolute;
+            background: currentColor;
+            opacity: 0.3;
+        }
+
+        .line-vertical {
+            width: 3px;
+            height: 120px;
+        }
+
+        .line-horizontal {
+            height: 3px;
+            width: 120px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary) 0%, #6b8f69 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 80px 20px;
+            overflow: hidden;
+        }
+
+        .hero .dots-pattern {
+            color: rgba(255,255,255,0.25);
+        }
+
+        .hero .line-decoration {
+            color: rgba(255,255,255,0.2);
+        }
+
+        .hero .line-vertical.top-left {
+            top: 100px;
+            left: 180px;
+        }
+
+        .hero .line-horizontal.bottom-right {
+            bottom: 150px;
+            right: 200px;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            width: 100%;
+            text-align: left;
+            z-index: 10;
+            padding-left: 80px;
+        }
+
+        .hero-subtitle-small {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            font-weight: 300;
+            color: rgba(255,255,255,0.95);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            line-height: 1.5;
+        }
+
+        .hero-year {
+            position: absolute;
+            bottom: 60px;
+            left: 80px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 2px;
+            z-index: 10;
+        }
+
+        .hero-title-large {
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(6rem, 16vw, 14rem);
+            font-weight: 200;
+            color: rgba(255, 255, 255, 0.08);
+            letter-spacing: 20px;
+            z-index: 5;
+            line-height: 1;
+        }
+
+        /* About Section */
+        .about {
+            min-height: 100vh;
+            padding: 120px 40px;
+            background: var(--white);
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 100px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image-box {
+            border: 4px solid var(--secondary-dark);
+            padding: 0;
+            background: var(--white);
+            position: relative;
+            box-shadow: 20px 20px 0 var(--secondary-light);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-content {
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 300;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .about-name {
+            font-family: 'Poppins', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 2rem;
+        }
+
+        .about-text {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        .green-dots {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .green-dots span {
+            width: 14px;
+            height: 14px;
+            background: var(--secondary-dark);
+            border-radius: 50%;
+        }
+
+        /* Experience Section */
+        .experience {
+            padding: 120px 40px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .experience-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .experience-header {
+            text-align: center;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .experience-header::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            margin: 30px auto 0;
+        }
+
+        .experience-timeline {
+            position: relative;
+            padding-left: 50px;
+        }
+
+        .experience-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary-light));
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 50px;
+            padding-left: 40px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: -42px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: 0 0 0 2px var(--primary);
+            z-index: 2;
+        }
+
+        .experience-item:nth-child(even)::before {
+            background: var(--secondary-dark);
+            box-shadow: 0 0 0 2px var(--secondary-dark);
+        }
+
+        .experience-company {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--secondary-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-role {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-date {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+            padding-left: 5px;
+        }
+
+        /* Social Media Section */
+        .social-media {
+            padding: 120px 40px;
+            background: var(--beige);
+            position: relative;
+        }
+
+        .social-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .social-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        .social-card {
+            background: var(--white);
+            border: 4px solid var(--secondary-dark);
+            padding: 40px 35px;
+            position: relative;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            cursor: pointer;
+        }
+
+        .social-card::before {
+            content: '';
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 10px;
+            background: var(--primary);
+        }
+
+        .social-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 60px rgba(13, 82, 9, 0.25);
+            border-color: var(--primary);
+        }
+
+        .social-card:nth-child(even) {
+            border-color: var(--primary);
+        }
+
+        .social-card:nth-child(even)::before {
+            background: var(--secondary-dark);
+        }
+
+        .social-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--white);
+            border-radius: 50%;
+            padding: 20px;
+            border: 3px solid var(--secondary-light);
+        }
+
+        .social-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .social-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--secondary-dark);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .social-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .social-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .social-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding-top: 25px;
+            border-top: 3px solid var(--secondary-light);
+            margin-top: 20px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Featured Posts Section */
+        .featured-posts {
+            margin-top: 80px;
+        }
+
+        .posts-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .posts-header h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--secondary-dark);
+            margin-bottom: 1rem;
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .post-card {
+            background: var(--white);
+            border: 3px solid var(--primary);
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+        }
+
+        .post-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(126, 162, 124, 0.3);
+            border-color: var(--secondary-dark);
+        }
+
+        .post-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .post-account {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--secondary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .post-description {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 120px 40px;
+            background: var(--white);
+            position: relative;
+        }
+
+        .skills-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 3px solid var(--secondary-light);
+            padding: 40px 30px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .skill-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .skill-card:hover::after {
+            width: 100%;
+        }
+
+        .skill-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(126, 162, 124, 0.2);
+        }
+
+        .skill-card:nth-child(odd) {
+            border-color: var(--primary);
+        }
+
+        .skill-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(126, 162, 124, 0.3);
+        }
+
+        .skill-card:nth-child(even) .skill-icon {
+            background: var(--secondary-dark);
+        }
+
+        .skill-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--secondary-dark);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            font-family: 'Poppins', sans-serif;
+            padding: 12px 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 25px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+
+        .skill-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 140px 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary-dark) 100%);
+            position: relative;
+        }
+
+        .contact .dots-pattern {
+            color: rgba(255,255,255,0.15);
+        }
+
+        .contact-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .contact .section-title {
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .contact-text {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 60px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 45px;
+            background: var(--white);
+            color: var(--secondary-dark);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            border: 4px solid var(--white);
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .contact-btn:hover {
+            background: transparent;
+            color: var(--white);
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .contact-btn svg {
+            width: 26px;
+            height: 26px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 50px 40px;
+            background: #0a3807;
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                padding-left: 40px;
+            }
+
+            .hero-title-large {
+                right: 40px;
+                font-size: 10rem;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .about-image {
+                max-width: 450px;
+                margin: 0 auto;
+            }
+
+            .social-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title-large {
+                font-size: 6rem;
+                right: 20px;
+            }
+
+            .hero-content {
+                padding-left: 20px;
+            }
+
+            .hero-year {
+                left: 20px;
+            }
+
+            .experience-timeline {
+                padding-left: 30px;
+            }
+
+            .social-grid,
+            .skills-grid,
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-btn {
+                width: 100%;
+                max-width: 320px;
+                justify-content: center;
+            }
+
+            .dots-pattern {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="dots-pattern dots-top-right"></div>
+        <div class="dots-pattern dots-bottom-left"></div>
+        <div class="line-decoration line-vertical top-left"></div>
+        <div class="line-decoration line-horizontal bottom-right"></div>
+        
+        <div class="hero-content">
+            <div class="hero-subtitle-small">Portfolio 2026</div>
+            <h1>José Ignacio Blady</h1>
+            <h2>Profesional de la<br>Comunicación</h2>
+        </div>
+
+        <div class="hero-title-large">PORTFOLIO</div>
+        <div class="hero-year">© 2026</div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="dots-pattern dots-top-left"></div>
+        <div class="dots-pattern dots-bottom-right"></div>
+        
+        <div class="about-container">
+            <div class="about-image">
+                <div class="green-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="about-image-box">
+                    <img src="foto-jose-sin-fondo.png" alt="José Ignacio Blady">
+                </div>
+            </div>
+
+            <div class="about-content">
+                <h2 class="section-title">SOBRE MI...</h2>
+                <h3 class="about-name">José Ignacio Blady</h3>
+                <p class="about-text">
+                    Comunicador con sólida formación en periodismo integral y en curso de Licenciatura en Comunicación y Periodismo (UNL). Trayectoria en producción de contenidos, gestión de redes sociales, edición audiovisual y cobertura de eventos. Manejo de herramientas de Inteligencia Artificial para optimización de contenidos y automatización de tareas. Mi objetivo es orientar mi perfil hacia la comunicación corporativa y estratégica, aportando creatividad, capacidad narrativa y visión digital.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience">
+        <div class="dots-pattern dots-top-right"></div>
+        
+        <div class="experience-container">
+            <div class="experience-header">
+                <h2 class="section-title">EXPERIENCIA PROFESIONAL</h2>
+            </div>
+
+            <div class="experience-timeline">
+                <!-- Mañana Uno -->
+                <div class="experience-item">
+                    <h3 class="experience-company">Mañana Uno</h3>
+                    <div class="experience-role">Radio / Streaming</div>
+                    <div class="experience-date">2026 – Presente</div>
+                    <ul class="experience-description">
+                        <li>Gestión de contenido digital y redes sociales del programa</li>
+                        <li>Participación en transmisiones y coberturas en vivo (relatos, comentarios, estudios)</li>
+                    </ul>
+                </div>
+
+                <!-- Multimedio UNO Santa Fe -->
+                <div class="experience-item">
+                    <h3 class="experience-company">Multimedio UNO Santa Fe</h3>
+                    <div class="experience-role">Producción de Contenidos</div>
+                    <div class="experience-date">2024 – Presente</div>
+                    <ul class="experience-description">
+                        <li>Creación y edición de contenidos digitales para plataformas del multimedio</li>
+                        <li>Desarrollo de piezas y producciones para marcas y clientes institucionales</li>
+                    </ul>
+                </div>
+
+                <!-- La Segunda -->
+                <div class="experience-item">
+                    <h3 class="experience-company">La Segunda</h3>
+                    <div class="experience-role">Radio / Streaming</div>
+                    <div class="experience-date">2024 – Presente</div>
+                    <ul class="experience-description">
+                        <li>Co-conducción de programa radial y participación en transmisiones en vivo</li>
+                        <li>Producción y creación de contenido multiplataforma</li>
+                    </ul>
+                </div>
+
+                <!-- REC Santa Fe -->
+                <div class="experience-item">
+                    <h3 class="experience-company">REC Santa Fe</h3>
+                    <div class="experience-role">Magazine Matutino</div>
+                    <div class="experience-date">2025</div>
+                    <ul class="experience-description">
+                        <li>Columna semanal: redacción de notas, investigación periodística y puesta al aire</li>
+                    </ul>
+                </div>
+
+                <!-- Radio Uno 106.3 -->
+                <div class="experience-item">
+                    <h3 class="experience-company">Radio Uno 106.3</h3>
+                    <div class="experience-role">Producción & Conducción</div>
+                    <div class="experience-date">2024 – 2025</div>
+                    <ul class="experience-description">
+                        <li>Co-conducción de programa radial; producción y creación de contenido multiplataforma</li>
+                        <li>Participación en transmisiones (relatos, comentarios, vestuarios y estudios centrales)</li>
+                    </ul>
+                </div>
+
+                <!-- Basquetboleando -->
+                <div class="experience-item">
+                    <h3 class="experience-company">Basquetboleando</h3>
+                    <div class="experience-role">Streaming</div>
+                    <div class="experience-date">2021 – 2024</div>
+                    <ul class="experience-description">
+                        <li>Creación de contenidos multimedia para redes sociales y plataformas digitales</li>
+                        <li>Coberturas de eventos; relatos y comentarios en vivo; co-conducción de programa</li>
+                    </ul>
+                </div>
+
+                <!-- Radio Gol 96.7 -->
+                <div class="experience-item">
+                    <h3 class="experience-company">Radio Gol 96.7</h3>
+                    <div class="experience-role">Producción Periodística</div>
+                    <div class="experience-date">2020 – 2023</div>
+                    <ul class="experience-description">
+                        <li>Gestión y redacción de contenidos en WordPress (notas, crónicas y artículos de opinión)</li>
+                        <li>Producción periodística y coberturas en exteriores (vestuarios y estudios centrales)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social-media">
+        <div class="dots-pattern dots-top-left"></div>
+        
+        <div class="social-container">
+            <div class="social-header">
+                <h2 class="section-title">TRABAJOS EN REDES SOCIALES</h2>
+            </div>
+
+            <div class="social-grid">
+                <!-- UNO Santa Fe -->
+                <a href="https://www.instagram.com/unosantafe/?hl=es" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-logo">
+                        <img src="logo-uno.png" alt="UNO Santa Fe">
+                    </div>
+                    <h3 class="social-title">UNO Santa Fe</h3>
+                    <p class="social-subtitle">Community Manager • Creador de Contenido</p>
+                    <p class="social-description">
+                        Gestión integral de redes sociales para el medio de comunicación líder de Santa Fe. Producción audiovisual, cobertura en vivo y estrategias virales.
+                    </p>
+                    <div class="social-stats">
+                        <div class="stat">
+                            <span class="stat-value">154K</span>
+                            <span class="stat-label">Seguidores</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">25K+</span>
+                            <span class="stat-label">Publicaciones</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Pelusa10 Store -->
+                <a href="https://www.instagram.com/pelusa10.store/?hl=es" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-logo">
+                        <img src="logo-pelusa.jpg" alt="Pelusa10 Store">
+                    </div>
+                    <h3 class="social-title">Pelusa10 Store</h3>
+                    <p class="social-subtitle">Estratega Digital • Content Creator</p>
+                    <p class="social-description">
+                        Desarrollo de identidad digital y estrategia de contenido para marca comercial. Creación de reels virales y posicionamiento en redes.
+                    </p>
+                    <div class="social-stats">
+                        <div class="stat">
+                            <span class="stat-value">+300%</span>
+                            <span class="stat-label">Engagement</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">Viral</span>
+                            <span class="stat-label">Contenido</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- REC Santa Fe -->
+                <a href="https://www.instagram.com/recsantafe/?hl=es" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-logo">
+                        <img src="logo-rec.jpg" alt="REC Santa Fe">
+                    </div>
+                    <h3 class="social-title">REC Santa Fe</h3>
+                    <p class="social-subtitle">Productor Audiovisual • Social Media</p>
+                    <p class="social-description">
+                        Producción de contenido para radio y streaming. Entrevistas de alto perfil y piezas audiovisuales para plataformas digitales.
+                    </p>
+                    <div class="social-stats">
+                        <div class="stat">
+                            <span class="stat-value">22K</span>
+                            <span class="stat-label">Seguidores</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">5.2K+</span>
+                            <span class="stat-label">Posts</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Casa Don Carlos -->
+                <a href="https://www.instagram.com/casadoncarlos/?hl=es" target="_blank" rel="noopener" class="social-card">
+                    <div class="social-logo">
+                        <img src="logo-doncarlos.jpg" alt="Casa Don Carlos">
+                    </div>
+                    <h3 class="social-title">Casa Don Carlos</h3>
+                    <p class="social-subtitle">Gestión de Marca Digital</p>
+                    <p class="social-description">
+                        Estrategia de contenido gastronómico y posicionamiento digital. Fotografía de producto y campañas de engagement para sector premium.
+                    </p>
+                    <div class="social-stats">
+                        <div class="stat">
+                            <span class="stat-value">Premium</span>
+                            <span class="stat-label">Contenido</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-value">Local</span>
+                            <span class="stat-label">Impacto</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Featured Posts -->
+            <div class="featured-posts">
+                <div class="posts-header">
+                    <h3>Publicaciones Destacadas</h3>
+                </div>
+
+                <div class="posts-grid">
+                    <a href="https://www.instagram.com/reel/DFklO55Rv9t/?hl=es" target="_blank" rel="noopener" class="post-card">
+                        <div class="post-icon">📰</div>
+                        <div class="post-account">UNO Santa Fe</div>
+                        <p class="post-description">Contenido destacado #1 - Producción audiovisual de alto impacto</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/reel/DFAqggDs3RM/?hl=es" target="_blank" rel="noopener" class="post-card">
+                        <div class="post-icon">📰</div>
+                        <div class="post-account">UNO Santa Fe</div>
+                        <p class="post-description">Contenido destacado #2 - Cobertura especial en vivo</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/reel/DNbtYpsu676/?hl=es" target="_blank" rel="noopener" class="post-card">
+                        <div class="post-icon">🛍️</div>
+                        <div class="post-account">Pelusa10 Store</div>
+                        <p class="post-description">Reel viral - Estrategia de contenido comercial</p>
+                    </a>
+
+                    <a href="https://www.instagram.com/reel/DK-lhh_ucjo/?hl=es" target="_blank" rel="noopener" class="post-card">
+                        <div class="post-icon">🛍️</div>
+                        <div class="post-account">Pelusa10 Store</div>
+                        <p class="post-description">Campaña de engagement - Posicionamiento de marca</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills">
+        <div class="dots-pattern dots-top-left"></div>
+        <div class="dots-pattern dots-bottom-right"></div>
+        
+        <div class="skills-container">
+            <div class="skills-header">
+                <h2 class="section-title">HABILIDADES & APTITUDES</h2>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">📱</div>
+                    <h3 class="skill-title">Gestión de Redes Sociales</h3>
+                    <ul class="skill-list">
+                        <li>Community Management</li>
+                        <li>Estrategia de Contenido</li>
+                        <li>Análisis de Métricas</li>
+                        <li>Growth Hacking</li>
+                        <li>Crisis Management</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎬</div>
+                    <h3 class="skill-title">Producción Audiovisual</h3>
+                    <ul class="skill-list">
+                        <li>Edición de Video/Audio</li>
+                        <li>Reels & TikToks Virales</li>
+                        <li>Storytelling Visual</li>
+                        <li>Fotografía Digital</li>
+                        <li>Motion Graphics</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">📰</div>
+                    <h3 class="skill-title">Periodismo Digital</h3>
+                    <ul class="skill-list">
+                        <li>Cobertura en Vivo</li>
+                        <li>Redacción para Redes</li>
+                        <li>Investigación</li>
+                        <li>Entrevistas</li>
+                        <li>Fact-Checking</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">💡</div>
+                    <h3 class="skill-title">Marketing Digital</h3>
+                    <ul class="skill-list">
+                        <li>Google Analytics (GA4)</li>
+                        <li>Google Ads</li>
+                        <li>SEO & Posicionamiento</li>
+                        <li>Copywriting</li>
+                        <li>WordPress</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3 class="skill-title">Inteligencia Artificial</h3>
+                    <ul class="skill-list">
+                        <li>Cursor / Claude Code</li>
+                        <li>Automatización de Tareas</li>
+                        <li>Optimización de Contenidos</li>
+                        <li>Prompt Engineering</li>
+                        <li>Workflows con IA</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">✍️</div>
+                    <h3 class="skill-title">Comunicación Estratégica</h3>
+                    <ul class="skill-list">
+                        <li>Redacción Institucional</li>
+                        <li>Gestión de Comunidades</li>
+                        <li>Relaciones Institucionales</li>
+                        <li>Planificación de Contenidos</li>
+                        <li>Branding Corporativo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="dots-pattern dots-top-left"></div>
+        <div class="dots-pattern dots-bottom-right"></div>
+        
+        <div class="contact-container">
+            <h2 class="section-title">CONTACTO</h2>
+            <p class="contact-text">
+                ¿Buscás potenciar tu presencia digital o fortalecer tu comunicación corporativa?<br>
+                Conectemos y llevemos tu proyecto al siguiente nivel.
+            </p>
+
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/joseignacioblady/" class="contact-btn" target="_blank" rel="noopener">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+
+                <a href="mailto:Joseiblady@gmail.com" class="contact-btn">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    Email
+                </a>
+
+                <a href="https://wa.me/5493425583044" class="contact-btn" target="_blank" rel="noopener">
+                    <svg fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                    </svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="green-dots" style="justify-content: center; margin-bottom: 20px;">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p>&copy; 2026 José Ignacio Blady. Todos los derechos reservados.</p>
+        <p style="margin-top: 8px;">Comunicación Corporativa & Relaciones Institucionales</p>
+        <p style="margin-top: 8px; font-size: 0.85rem;">Santa Fe, Argentina</p>
+    </footer>
+</body>
+</html>
